@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-sm-12">
+      <section>
+        <h1>Blog Posts</h1>
+        <ul>
+          <li *ngFor="let bpost of blogposts$">
+            <a routerLink="/blogpost/{{bpost.slug}}">{{ bpost.title.rendered }}</a>
+          </li>
+        </ul>
+      </section>
+    </div>
+  </div>
+</div>

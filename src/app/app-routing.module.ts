@@ -4,6 +4,7 @@ import { PageFrontComponent } from './page-front/page-front.component';
 import { PageAboutComponent } from './page-about/page-about.component';
 import { PageContactComponent } from './page-contact/page-contact.component';
 import { BlogpostComponent } from './blogpost/blogpost.component';
+import { BlogpostsComponent } from './blogposts/blogposts.component';
 
 
 const routes: Routes = [
@@ -20,8 +21,12 @@ const routes: Routes = [
     component: PageContactComponent
   },
   {
-    path: 'blogs/:slug',
+    path: 'blogpost/:slug',
     component: BlogpostComponent
+  },
+  {
+    path: 'blogposts',
+    component: BlogpostsComponent
   },
 ];
 

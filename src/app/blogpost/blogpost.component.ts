@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import {DataService} from '../data.service';
+import { Observable } from 'rxjs';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-blogpost',
@@ -7,9 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class BlogpostComponent implements OnInit {
 
-  constructor() { }
+  blogpost$: Object;
+
+  constructor(private data: DataService, private route: ActivatedRoute) {
+    this.route.params.subscribe(params => this.blogpost$ = params.slug)
+  }
 
   ngOnInit() {
+    this.data.getSinglePost(this.blogpost$)
+      .subscribe(
+        data => this.blogpost$ = data,
+        error => console.log(error)
+      )
   }
 
 }
