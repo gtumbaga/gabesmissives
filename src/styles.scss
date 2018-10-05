@@ -338,3 +338,22 @@ footer {
   font-size: 14px;
   padding: 40px 0;
 }
+
+
+
+
+//GABE'S ADDITIONS
+code, pre {
+  background: #001d31;
+  color: #92d0ff;
+  font-size: 14px;
+  border: solid 1px #003f6d;
+  border-radius: 10px;
+}
+pre code {
+  border: none !important;
+}
+blockquote {
+  border-color: #0077C9;
+  margin-left: 40px;
+}
