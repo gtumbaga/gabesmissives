@@ -11,17 +11,23 @@ import { ActivatedRoute } from '@angular/router';
 export class BlogpostComponent implements OnInit {
 
   blogpost$: Object;
+  postTitle: string;
+  postBody: string;
 
   constructor(private data: DataService, private route: ActivatedRoute) {
-    this.route.params.subscribe(params => this.blogpost$ = params.slug)
+    this.route.params.subscribe((params) => {
+      this.blogpost$ = params.slug;
+      //console.log(this.blogpost$);
+    });
   }
 
   ngOnInit() {
-    this.data.getSinglePost(this.blogpost$)
-      .subscribe(
-        data => this.blogpost$ = data,
-        error => console.log(error)
-      )
+    this.data.getSinglePost(this.blogpost$).subscribe((data) => {
+      this.blogpost$ = data[0];
+      this.postTitle = data[0].title.rendered;
+      this.postBody = data[0].content.rendered;
+      //console.log(data);
+    });
   }
 
 }

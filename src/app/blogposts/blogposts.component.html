@@ -2,7 +2,8 @@
   <div class="row">
     <div class="col-sm-12">
       <section>
-        <h1>Blog Posts</h1>
+        <h1 class="text-center">Blog Posts</h1>
+        <hr />
         <ul>
           <li *ngFor="let bpost of blogposts$">
             <a routerLink="/blogpost/{{bpost.slug}}">{{ bpost.title.rendered }}</a>

@@ -2,9 +2,9 @@
   <div class="row">
     <div class="col-sm-12">
       <section>
-        <h1>{{ blogpost$[0].title.rendered }}</h1>
+        <h1 class="text-center">{{ postTitle }}</h1>
         <hr />
-        <div [innerHtml]="blogpost$[0].content.rendered"></div>
+        <div [innerHtml]="postBody"></div>
       </section>
     </div>
   </div>
